@@ -1,9 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCocktail, faCoffee, faCalculator, faEnvelope, faAddressCard } from "@fortawesome/free-solid-svg-icons";
-import { fap } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCocktail,
+  faCoffee,
+  faCalculator,
+  faEnvelope,
+  faAddressCard,
+} from "@fortawesome/free-solid-svg-icons";
 // import {  } from "@fortawsome/free-brands-svg-icons";
-import "../Styles/portfolio.css";
+
+import ContactBtn from "../ContactMe/Contact";
 
 const Footer = () => {
   return (
@@ -18,7 +24,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <button className="contactBtn">CONTACT ME</button>
+        <ContactBtn />
       </div>
       <div className="copyRight">
         <div>CopyRight &copy; 2022</div>

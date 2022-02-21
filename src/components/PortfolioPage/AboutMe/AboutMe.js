@@ -1,5 +1,4 @@
 import React from "react";
-import "../Styles/portfolio.css";
 
 const AboutMe = () => {
   return (
@@ -10,9 +9,11 @@ const AboutMe = () => {
         </div>
         <div className="col-sm-8 col-md-9">
           <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo pariatur eum, nobis molestias autem officia quod atque enim
-            libero corrupti eius exercitationem provident! Fuga voluptates ab magnam cumque, a corporis iste neque quam quisquam velit
-            officiis aspernatur nihil ipsam accusantium architecto similique dolore incidunt eaque aliquam dicta numquam. Itaque, iure.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo pariatur eum, nobis
+            molestias autem officia quod atque enim libero corrupti eius exercitationem provident!
+            Fuga voluptates ab magnam cumque, a corporis iste neque quam quisquam velit officiis
+            aspernatur nihil ipsam accusantium architecto similique dolore incidunt eaque aliquam
+            dicta numquam. Itaque, iure.
           </div>
           <button className="my-5 downBtn">Download Resume</button>
         </div>

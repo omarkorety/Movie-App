@@ -1,6 +1,5 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-import "../Styles/portfolio.css";
 
 const projects = ["Web Design", "UI-UX", "Back-End", "Front-End", "Logo Design", "Android Project"];
 

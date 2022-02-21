@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderImg from "./Hero.jpg";
-import "../Styles/portfolio.css";
+import ContactBtn from "../ContactMe/Contact";
 const HeroSection = () => {
   return (
     <section className="dark-bg" id="hero">

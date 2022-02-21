@@ -1,0 +1,149 @@
+body {
+  background-color: #edf2f4 !important;
+}
+
+.navbar {
+  background-color: #14213d !important;
+  .navbar-brand {
+    color: white !important;
+    line-height: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 20px;
+  }
+  .nav-item a {
+    color: white !important;
+  }
+  .nav-link {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .nav-link:hover {
+    color: #2f8abb !important;
+    transform: scale(0.9) !important;
+    transition: 0.2s;
+  }
+}
+// Search Bar
+.search {
+  /* background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); */
+  background-color: #023047;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 30px;
+}
+.searchInput {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #ffffff;
+  input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    opacity: 80%;
+    outline: none;
+  }
+  ::placeholder {
+    color: #ffffff;
+  }
+}
+// SearchBar
+
+// Login
+.login {
+  line-height: 25vh;
+}
+.custom-card {
+  background-color: #ffffff !important;
+}
+
+// Login
+
+// Movies Style
+.custom-movies {
+  margin-top: 60px !important;
+}
+.movie_card {
+  position: relative;
+  padding: 0 !important;
+  width: 15rem;
+  margin: 14px;
+  border-radius: 15px !important;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.movie_card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.movie_info {
+  color: #5e5c5c;
+}
+
+.movie_info i {
+  font-size: 15px;
+  text-decoration: none;
+}
+.card-title {
+  width: 80%;
+  height: 2rem;
+}
+.movie-card-style {
+  text-decoration: none;
+}
+
+// Movies Style
+
+//Movie Details
+
+//
+.card-detail {
+  margin: 10vh;
+}
+
+.img-container {
+  position: relative;
+}
+
+.heart-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+}
+
+.movieDetail {
+  font-weight: 500;
+  font-size: 2vh;
+}
+
+.show-password {
+  border: none;
+  background-color: #3182b1;
+  color: white;
+  padding: 7px;
+  margin-top: 15px;
+  border-radius: 10px;
+  float: right;
+}
+.custom-divder {
+  border-bottom: 0.5px solid #dddddd;
+  margin: 0 50px;
+}
+.spacer {
+  min-height: 25px;
+}
+
+.page-container {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page-footer {
+  width: 100%;
+  margin: 0;
+  background-color: #14213d;
+}
