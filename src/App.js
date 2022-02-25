@@ -12,23 +12,29 @@ import NotFound from "./components/MovieApp/NotFound/NotFound";
 import MovieDetails from "./components/MovieApp/MovieDetails/MovieDetails";
 import Favorites from "./components/MovieApp/Favorites/Favorites";
 import About from "./components/MovieApp/About/About";
-
+import { LanguageContext } from "./components/languageContext";
+import { useState } from "react";
 function App() {
+  const [Language, setLanguage] = useState("EN");
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/about" exact component={About} />
-          <Route path="/favorites" exact component={Favorites} />
-          <Route path="/movie-details/:id" exact component={MovieDetails} />
-          <Route path="/register" excat component={Register} />
-          <Route path={"*"} component={NotFound} />
-        </Switch>
-        <Footer />
-      </BrowserRouter>
+      <div dir={Language === "AR" ? "rtl" : "ltr"}>
+        <BrowserRouter>
+          <LanguageContext.Provider value={{ Language, setLanguage }}>
+            <Navbar />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/about" exact component={About} />
+              <Route path="/favorites" exact component={Favorites} />
+              <Route path="/movie-details/:id" exact component={MovieDetails} />
+              <Route path="/register" excat component={Register} />
+              <Route path={"*"} component={NotFound} />
+            </Switch>
+            <Footer />
+          </LanguageContext.Provider>
+        </BrowserRouter>
+      </div>
     </>
   );
 }

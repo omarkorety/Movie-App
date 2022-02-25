@@ -5,9 +5,9 @@ import { addToFavorite } from "../../store/actions/addToFavorite";
 import MovieCard from "../MovieCard/MovieCard";
 
 function Favorites() {
-  const FavArr = useSelector((state) => state.favoriteMovies);
+  const FavArr = useSelector((state) => state.favorite.favoriteMovies);
   const dispatch = useDispatch();
-
+  console.log(FavArr);
   const addFaveMovie = (id) => {
     if (FavArr.length !== 0 && FavArr.includes(id)) {
       const index = FavArr.indexOf(id);

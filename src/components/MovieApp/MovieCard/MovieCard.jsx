@@ -5,7 +5,7 @@ import heart from "./heart.png";
 import heart2 from "./heart2.png";
 
 function MovieCard(props) {
-  const FavArr = useSelector((state) => state.favoriteMovies);
+  const FavArr = useSelector((state) => state.favorite.favoriteMovies);
   const { id, img, title } = props;
   return (
     <div className="card movie_card">

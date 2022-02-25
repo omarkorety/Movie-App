@@ -7,27 +7,47 @@ import { addToFavorite } from "../../store/actions/addToFavorite";
 import MovieCard from "../MovieCard/MovieCard";
 import Pagination from "../Pagination/Pagination";
 import Search from "../Search/Search";
+import { getMovies } from "../../store/actions/getMovies";
 
 function Movies() {
-  const FavArr = useSelector((state) => state.favoriteMovies);
+  const FavArr = useSelector((state) => state.favorite.favoriteMovies);
   const dispatch = useDispatch();
+  const MovieArr = useSelector((state) => state.movieData.movieList);
 
+  // Add to Favorite Function
   const addFaveMovie = (id) => {
-    if (FavArr.length !== 0 && FavArr.includes(id)) {
+    // If the string is not empty
+    // And includes the id in the array IT gets removed by splice
+    if (FavArr.includes(id) && FavArr.length !== 0) {
       const index = FavArr.indexOf(id);
-      if (index >= 0) {
-        FavArr.splice(index, 1);
-      }
+      FavArr.splice(index, 1);
+
+      // Retruns the array with the new Data
       dispatch(addToFavorite([...FavArr]));
+      //Adds the movie into the Favorite Array
     } else {
       dispatch(addToFavorite([id, ...FavArr]));
     }
   };
-  const [movies, setMovies] = useState([]);
-  const [numPages, setNumPages] = useState();
-  const [paginate, setPaginate] = useState(1);
 
+  const [movies, setMovies] = useState([]);
+  // const [numPages, setNumPages] = useState();
+  // const [paginate, setPaginate] = useState(1);
+
+  //Populates the page with the API data
+  useEffect(() => {
+    axiosInstance
+      .get("/3/movie/popular?api_key=9561f159ab183a0ab18d48771e8798c8")
+      .then((res) => setMovies(res.data.results))
+      .catch((err) => {
+        console.log(err);
+      });
+    // dispatch(getMovies());
+  }, []);
+
+  // Search Function
   const searchChange = (event) => {
+    // IF The Search is empty it fetches all data
     if (!event.target.value.length) {
       axiosInstance
         .get("/3/movie/popular?api_key=9561f159ab183a0ab18d48771e8798c8")
@@ -36,6 +56,7 @@ function Movies() {
           console.log(err);
         });
     }
+    // It its not empty start search query
     if (event.target.value.length)
       axiosInstance
         .get(
@@ -54,17 +75,6 @@ function Movies() {
   const debouncedChangeHandler = useCallback(debounce(searchChange, 500), []);
 
   const paginationChange = (event) => {};
-
-  useEffect(() => {
-    axiosInstance
-      .get("/3/movie/popular?api_key=9561f159ab183a0ab18d48771e8798c8")
-      .then((res) => setMovies(res.data.results))
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  // Search Filter
 
   return (
     <div className="page-container">
@@ -86,7 +96,7 @@ function Movies() {
             })}
           </div>
           <div className="d-flex justify-content-center mt-5">
-            <Pagination next={nextPage} prev={prevPage} />
+            {/* <Pagination next={nextPage} prev={prevPage} /> */}
           </div>
         </div>
       </div>

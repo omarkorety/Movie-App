@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import popcorn from "./imgs/popcorn.png";
 import { useSelector } from "react-redux";
+import { LanguageContext } from "../../languageContext";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const FavArr = useSelector((state) => state.favoriteMovies);
+  const FavArr = useSelector((state) => state.favorite.favoriteMovies);
+  const { Language, setLanguage } = useContext(LanguageContext);
+
+  const ChangeLang = () => {
+    if (Language == "EN") {
+      setLanguage("AR");
+    } else {
+      setLanguage("EN");
+    }
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
@@ -53,6 +63,11 @@ function Navbar() {
                 <Link to="/about" className="nav-link">
                   About
                 </Link>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" onClick={ChangeLang}>
+                  {Language}
+                </a>
               </li>
             </ul>
           </div>
