@@ -6,6 +6,8 @@ pipeline {
         stage('Build App Image') {
           steps {
             script {
+              withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
+
               sh """
                 docker build .  -t omarkorety/movieapp:V${BUILD_NUMBER}
                 echo ${BUILD_NUMBER}
@@ -17,7 +19,7 @@ pipeline {
                         } 
                 }
             }
-
+    }
 
         // stage('Upload Image'){
         //   steps{
