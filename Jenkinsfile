@@ -77,7 +77,6 @@ pipeline {
                               mv Deployment/deploy.yaml Deployment/deploy.yaml.tmp
                               cat Deployment/deploy.yaml.tmp | envsubst > Deployment/deploy.yaml
                               rm -f Deployment/deploy.yaml.tmp
-                              kubectl create namespace myapp
                               kubectl apply -f Deployment -n myapp
                             """
                 }
