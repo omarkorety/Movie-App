@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: bakehouse
-  name: bakehouse
+    app: movieapp
+  name: movieapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bakehouse
+      app: movieapp
   template:
     metadata:
       labels:
-        app: bakehouse
+        app: movieapp
     spec:
       containers:
-      - image: kareemelkasaby/vfbakehouse:omar
-        name: bakehouse
+      - image: omarkorety/movieapp:${BUILD_NUMBER}
+        name: movieapp
         imagePullPolicy: Always
         ports:
         - containerPort: 80
