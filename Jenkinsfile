@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages{
-        stage('Build ') {
+        stage('Build') {
           steps {
             script {
               withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) { 
@@ -21,7 +21,7 @@ pipeline {
             }
     }
 
-        stage('Deploy){
+        stage('Deploy'){
           steps{
             script {
                  withCredentials([file(credentialsId: 'mysecurity', variable: 'omar')]){
