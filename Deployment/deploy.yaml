@@ -15,7 +15,7 @@ spec:
         app: movieapp
     spec:
       containers:
-      - image: omarkorety/movieapp:${BUILD_NUMBER}
+      - image: omarkorety/movieapp:V${BUILD_NUMBER}
         name: movieapp
 #         imagePullPolicy: Always
         ports:
